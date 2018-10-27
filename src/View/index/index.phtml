@@ -1,3 +1,94 @@
 <?php $this->navbar(); ?>
 
-<h1>Index</h1>
+<br>
+<hr>
+
+<div class="card border-dark">
+    <div class="card-header">
+        <h2>Dashboard</h2>
+    </div>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col-3">
+                <div class="alert alert-primary" role="alert">
+                    <div class="row">
+                        <div class="col-4 text-left">
+                            <span style="font-size: 48pt;" class="fa fa-users"></span>
+                        </div>
+                        <div class="col-8 text-right">
+                            <span class="text-right" style="font-size: 28pt;"><?=$data['students']?></span><br>
+                            <span style="font-size: 16pt;">Alunos</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-right">
+                            <hr>
+                            <a href="/aluno" class="btn btn-sm btn-outline-dark">Ver Alunos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="alert alert-info" role="alert">
+                    <div class="row">
+                        <div class="col-4 text-left">
+                            <span style="font-size: 48pt;" class="fa fa-chalkboard-teacher"></span>
+                        </div>
+                        <div class="col-8 text-right">
+                            <span class="text-right" style="font-size: 28pt;"><?=$data['teachers']?></span><br>
+                            <span style="font-size: 16pt;">Professores</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-right">
+                            <hr>
+                            <a href="/professores" class="btn btn-sm btn-outline-dark">Ver Professores</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="alert alert-secondary" role="alert">
+                    <div class="row">
+                        <div class="col-4 text-left">
+                            <span style="font-size: 48pt;" class="fa fa-graduation-cap"></span>
+                        </div>
+                        <div class="col-8 text-right">
+                            <span class="text-right" style="font-size: 28pt;"><?=$data['courses']?></span><br>
+                            <span style="font-size: 16pt;">Cursos</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-right">
+                            <hr>
+                            <a href="/curso" class="btn btn-sm btn-outline-dark">Ver Cursos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="alert alert-success" role="alert">
+                    <div class="row">
+                        <div class="col-4 text-left">
+                            <span style="font-size: 48pt;" class="fa fa-comments"></span>
+                        </div>
+                        <div class="col-8 text-right">
+                            <span class="text-right" style="font-size: 28pt;">0</span><br>
+                            <span style="font-size: 16pt;">Turmas</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-right">
+                            <hr>
+                            <a href="#" onclick="alert('Em desenvolvimento')" class="btn btn-sm btn-outline-dark">Ver Turmas</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
