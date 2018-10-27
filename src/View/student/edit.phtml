@@ -1,0 +1,63 @@
+<?php
+
+$this->navbar();
+
+/** @var \App\Entity\Student $student */
+$student = $data['student'];
+
+$id = $student->getUser()->getId();
+
+?>
+<hr>
+<h1>Editar Aluno: <?=$student->getUser()->getName()?></h1>
+<br>
+
+<div class="row">
+    <div class="col-6">
+        <form method="post" action="/aluno/atualizar?id=<?=$id?>">
+            <label for="name">Nome: </label>
+            <input value="<?=$student->getUser()->getName()?>" type="text" id="name" name="name" required class="form-control">
+            <br>
+
+            <label for="email">Email: </label>
+            <input value="<?=$student->getUser()->getEmail()?>" type="email" id="email" name="email" required class="form-control">
+            <br>
+
+            <label for="phone">Telefone: </label>
+            <input value="<?=$student->getUser()->getPhone()?>" type="text" id="phone" name="phone" required class="form-control">
+            <br>
+
+            <label for="sex">Sexo: </label>
+            <select name="sex" id="sex" required class="form-control">
+                <option <?=($student->getSex() == 'F' ? 'selected': '')?>>Feminino</option>
+                <option <?=($student->getSex() == 'M' ? 'selected': '')?>>Masculino</option>
+            </select>
+            <br>
+
+            <label for="birth">Data de Nascimento: </label>
+            <input value="<?=$student->getBirth()->format('m/d/Y')?>" type="text" id="birth" name="birth" required class="form-control">
+            <br>
+
+            <button class="btn btn-block btn-primary">Atualizar</button>
+        </form>
+    </div>
+
+    <div class="col-6">
+        <div class="jumbotron">
+            <h3>Como adicionar um novo aluno?</h3>
+
+            <p>
+                akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+            </p>
+            <p>
+                akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+            </p>
+        </div>
+    </div>
+</div>
+<br><br><br>

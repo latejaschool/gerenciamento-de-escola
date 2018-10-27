@@ -1,0 +1,44 @@
+<?php use App\Entity\Teacher;
+
+$this->navbar();  ?>
+
+<br><br>
+<h1>Professores</h1>
+
+<table class="table table-striped table-hover">
+    <thead>
+    <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Telefone</th>
+        <th>Formação</th>
+        <th>Opções</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <?php
+        /** @var Teacher $teacher */
+        foreach ($data['teachers'] as $teacher) {
+            echo '<tr>';
+                echo '<td>',$teacher->getUser()->getName(),'</td>';
+                echo '<td>',$teacher->getUser()->getEmail(),'</td>';
+                echo '<td>',$teacher->getUser()->getPhone(),'</td>';
+                echo '<td>',$teacher->getFormation(),'</td>';
+                echo '
+                   <td>
+                        <a href="/professor/detalhes" class="btn btn-info">Detalhes</a>
+                        <a href="#" class="btn btn-danger">Excluir</a>
+                   </td>
+                   ';
+            echo '</tr>';
+        }
+    ?>
+    </tbody>
+</table>
+
+<div class="text-right">
+    <a class="btn btn-primary" href="/professor/novo">
+        Novo Professor
+    </a>
+</div>

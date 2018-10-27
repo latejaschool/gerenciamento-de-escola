@@ -1,0 +1,49 @@
+<?php $this->navbar();?>
+
+<hr>
+
+<h1>Alunos</h1>
+
+<table class="table table-hover table-striped ">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Sexo</th>
+        <th>Data de Nascimento</th>
+        <th>Opções</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <?php
+
+    if (! $data['students']) {
+        echo '<div class="alert alert-danger">Nenhum aluno encontrado</div>';
+    }
+
+    /** @var \App\Entity\Student $student */
+    foreach ($data['students'] as $student) {
+        $id = $student->getUser()->getId();
+
+        echo '<tr>';
+            echo '<td>', $id ,'</td>';
+            echo '<td>', $student->getUser()->getName() ,'</td>';
+            echo '<td>', $student->getUser()->getEmail() ,'</td>';
+            echo '<td>', $student->getSex() ,'</td>';
+            echo '<td>', $student->getBirth()->format('d/m/Y') ,'</td>';
+
+            echo '<td>';
+                echo '<a class="btn btn-sm btn-info" href="/aluno/detalhes?id=' , $id , '">Detalhes</a>';
+            echo '</td>';
+        echo '</tr>';
+    }
+    ?>
+    </tbody>
+</table>
+<br>
+
+<div class="text-right">
+    <a href="/aluno/novo" class="btn btn-outline-primary">Novo Aluno</a>
+</div>
