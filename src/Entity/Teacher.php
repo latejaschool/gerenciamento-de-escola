@@ -20,7 +20,7 @@ class Teacher
     /**
      * @var User
      * @Id()
-     * @OneToOne(targetEntity="User", cascade={"persist"})
+     * @OneToOne(targetEntity="User", cascade={"all"})
      * @JoinColumn()
      */
     private $user;
