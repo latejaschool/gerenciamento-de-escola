@@ -1,0 +1,55 @@
+<?php
+
+$this->navbar();
+
+/** @var \App\Entity\Course $course */
+$course = $data['course'];
+
+$id = $course->getId();
+
+?>
+
+<br>
+<hr>
+
+<div class="card border-dark">
+
+    <div class="card-header">
+        <h2>Curso: <?= $course->getName() ?></h2>
+    </div>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col-8">
+                <table class="table table-striped table-hover table-bordered">
+                    <tr>
+                        <th>Nome: </th>
+                        <td><?=$course->getName() ?></td>
+                    </tr>
+                    <tr>
+                        <th>Carga Horária: </th>
+                        <td><?=$course->getWorkload() ?></td>
+                    </tr>
+                    <tr>
+                        <th>Descrição: </th>
+                        <td><?=$course->getDescription() ?></td>
+                    </tr>
+                    <tr>
+                        <th>Registrado em: </th>
+                        <td><?=$course->getRegisteredAt()->format('d/m/Y H:i:s') ?></td>
+                    </tr>
+                    <tr>
+                        <th>Atualizado em: </th>
+                        <td><?=$course->getUpdatedAt()->format('d/m/Y H:i:s') ?></td>
+                    </tr>
+                </table>
+
+                <br>
+
+                <a href="/curso/editar?id=<?=$id?>" class="btn btn-warning">Editar</a>
+                 <a href="/curso/remover?id=<?=$id?>" class="btn btn-danger">Remover</a>
+
+            </div>
+        </div>
+    </div>
+</div>

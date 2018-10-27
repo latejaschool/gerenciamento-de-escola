@@ -6,7 +6,7 @@
 <div class="card border-dark">
 
     <div class="card-header">
-        <h2>Alunos</h2>
+        <h2>Cursos</h2>
     </div>
 
     <div class="card-body">
@@ -15,9 +15,7 @@
             <tr>
                 <th>#</th>
                 <th>Nome</th>
-                <th>Email</th>
-                <th>Sexo</th>
-                <th>Data de Nascimento</th>
+                <th>Carga Horária</th>
                 <th>Opções</th>
             </tr>
             </thead>
@@ -25,23 +23,21 @@
             <tbody>
             <?php
 
-            if (! $data['students']) {
+            if (! $data['courses']) {
                 echo '<div class="alert alert-danger">Nenhum aluno encontrado</div>';
             }
 
-            /** @var \App\Entity\Student $student */
-            foreach ($data['students'] as $student) {
-                $id = $student->getUser()->getId();
+            /** @var \App\Entity\Course $course */
+            foreach ($data['courses'] as $course) {
+                $id = $course->getId();
 
                 echo '<tr>';
                 echo '<td>', $id ,'</td>';
-                echo '<td>', $student->getUser()->getName() ,'</td>';
-                echo '<td>', $student->getUser()->getEmail() ,'</td>';
-                echo '<td>', $student->getSex() ,'</td>';
-                echo '<td>', $student->getBirth()->format('d/m/Y') ,'</td>';
+                echo '<td>', $course->getName() ,'</td>';
+                echo '<td>', $course->getWorkload(), '</td>';
 
                 echo '<td>';
-                echo '<a class="btn btn-sm btn-info" href="/aluno/detalhes?id=' , $id , '">Detalhes</a>';
+                echo '<a class="btn btn-sm btn-info" href="/curso/detalhes?id=' , $id , '">Detalhes</a>';
                 echo '</td>';
                 echo '</tr>';
             }
@@ -50,7 +46,7 @@
         </table>
         <br>
         <div class="text-right">
-            <a href="/aluno/novo" class="btn btn-outline-primary">Novo Aluno</a>
+            <a href="/curso/novo" class="btn btn-outline-primary">Novo Curso</a>
         </div>
     </div>
 </div>

@@ -1,0 +1,51 @@
+<?php $this->navbar(); ?>
+
+<br>
+<hr>
+
+<div class="card border-dark">
+
+    <div class="card-header">
+        <h2>Novo Curso</h2>
+    </div>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col-6">
+                <form method="post" action="/curso/inserir">
+                    <label for="name">Nome: </label>
+                    <input type="text" id="name" name="name" required class="form-control">
+                    <br>
+
+                    <label for="workload">Carga Horária: </label>
+                    <input type="number" id="workload" name="workload" required class="form-control">
+                    <br>
+
+                    <label for="description">Descrição: </label>
+                    <textarea type="text" id="description" name="description" required class="form-control"></textarea>
+                    <br>
+                    
+                    <button class="btn btn-block btn-primary">Enviar</button>
+                </form>
+            </div>
+
+            <div class="col-6">
+                <div class="jumbotron">
+                    <h3>Como adicionar um novo curso?</h3>
+
+                    <p>
+                        akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                        akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                        akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                        akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                    </p>
+                    <p>
+                        akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                        akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                        akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

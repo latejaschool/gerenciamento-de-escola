@@ -1,5 +1,6 @@
 <?php
 
+use App\Controller\CourseController;
 use App\Service\Route;
 use App\Controller\StudentController;
 use App\Controller\IndexController;
@@ -20,6 +21,7 @@ return [
 
     '/login' => Route::create(IndexController::class, 'login'),
 
+    //Professor
     '/professor' => Route::create(TeacherController::class, 'index'),
     '/professor/detalhes' => Route::create(TeacherController::class, 'details'),
     '/professor/novo' => Route::create(TeacherController::class, 'new'),
@@ -36,6 +38,15 @@ return [
     '/aluno/remover' => Route::create(StudentController::class, 'remove'),
     '/aluno/editar' => Route::create(StudentController::class, 'edit'),
     '/aluno/atualizar' => Route::create(StudentController::class, 'update'),
+
+    //Curso
+    '/curso' => Route::create(CourseController::class, 'index'),
+    '/curso/detalhes' => Route::create(CourseController::class, 'details'),
+    '/curso/novo' => Route::create(CourseController::class, 'new'),
+    '/curso/inserir' => Route::create(CourseController::class, 'insert'),
+    '/curso/remover' => Route::create(CourseController::class, 'remove'),
+    '/curso/editar' => Route::create(CourseController::class, 'edit'),
+    '/curso/atualizar' => Route::create(CourseController::class, 'update'),
 
 
 ];

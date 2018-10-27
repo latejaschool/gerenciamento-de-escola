@@ -1,0 +1,60 @@
+<?php
+
+$this->navbar();
+
+/** @var \App\Entity\Course $course */
+$course = $data['course'];
+
+$id = $course->getId();
+
+?>
+
+
+<br>
+<hr>
+
+<div class="card border-dark">
+    <div class="card-header">
+        <h2>Editar Curso: <?= $course->getName() ?></h2>
+    </div>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col-6">
+                <form method="post" action="/curso/atualizar?id=<?=$id?>">
+                    <label for="name">Nome: </label>
+                    <input value="<?=$course->getName()?>" type="text" id="name" name="name" required class="form-control">
+                    <br>
+
+                    <label for="workload">Email: </label>
+                    <input value="<?=$course->getWorkload()?>" type="text" id="workload" name="workload" required class="form-control">
+                    <br>
+
+                    <label for="description">Descrição: </label>
+                    <textarea id="description" name="description" required class="form-control"><?=$course->getDescription()?></textarea>
+                    <br>
+
+                    <button class="btn btn-block btn-primary">Atualizar</button>
+                </form>
+            </div>
+
+            <div class="col-6">
+                <div class="jumbotron">
+                    <h3>Como adicionar um novo curso?</h3>
+
+                    <p>
+                        akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                        akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                        akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                        akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                    </p>
+                    <p>
+                        akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                        akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                        akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
