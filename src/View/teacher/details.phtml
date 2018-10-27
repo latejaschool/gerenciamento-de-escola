@@ -8,43 +8,61 @@ $teacher = $data['teacher'];
 $id = $teacher->getUser()->getId();
 
 ?>
-<hr>
-<h1>Professor: <?= $teacher->getUser()->getName() ?></h1>
 
 <br>
-<div class="row">
-    <div class="col-8">
-        <table class="table table-striped table-hover table-bordered">
-            <tr>
-                <th>Nome: </th>
-                <td><?=$teacher->getUser()->getName() ?></td>
-            </tr>
-            <tr>
-                <th>Email: </th>
-                <td><?=$teacher->getUser()->getEmail() ?></td>
-            </tr>
-            <tr>
-                <th>Telefone: </th>
-                <td><?=$teacher->getUser()->getPhone() ?></td>
-            </tr>
-            <tr>
-                <th>Formação: </th>
-                <td><?=$teacher->getFormation() ?></td>
-            </tr>
-            <tr>
-                <th>Registrado em: </th>
-                <td><?=$teacher->getUser()->getRegisteredAt()->format('d/m/Y H:i:s') ?></td>
-            </tr>
-            <tr>
-                <th>Atualizado em: </th>
-                <td><?=$teacher->getUser()->getUpdatedAt()->format('d/m/Y H:i:s') ?></td>
-            </tr>
-        </table>
+<hr>
 
-        <br>
+<div class="card border-dark">
 
-        <a href="/professor/editar?id=<?=$id?>" class="btn btn-warning">Editar</a>
-         <a href="/professor/remover?id=<?=$id?>" class="btn btn-danger">Remover</a>
+    <div class="card-header">
+        <h2>Professor: <?= $teacher->getUser()->getName() ?></h2>
+    </div>
 
+    <div class="card-body">
+        <div class="row">
+            <div class="col-9">
+                <table class="table table-striped table-hover table-bordered">
+                    <tr>
+                        <th>Nome: </th>
+                        <td><?=$teacher->getUser()->getName() ?></td>
+                    </tr>
+                    <tr>
+                        <th>Email: </th>
+                        <td><?=$teacher->getUser()->getEmail() ?></td>
+                    </tr>
+                    <tr>
+                        <th>Telefone: </th>
+                        <td><?=$teacher->getUser()->getPhone() ?></td>
+                    </tr>
+                    <tr>
+                        <th>Formação: </th>
+                        <td><?=$teacher->getFormation() ?></td>
+                    </tr>
+                    <tr>
+                        <th>Registrado em: </th>
+                        <td><?=$teacher->getUser()->getRegisteredAt()->format('d/m/Y H:i:s') ?></td>
+                    </tr>
+                    <tr>
+                        <th>Atualizado em: </th>
+                        <td><?=$teacher->getUser()->getUpdatedAt()->format('d/m/Y H:i:s') ?></td>
+                    </tr>
+                </table>
+
+                <br>
+
+                <a href="/professor/editar?id=<?=$id?>" class="btn btn-warning">Editar</a>
+                 <a href="/professor/remover?id=<?=$id?>" class="btn btn-danger">Remover</a>
+
+            </div>
+            <div class="col-3">
+                <div class="card" style="width: 14rem;">
+                    <img class="card-img-top" src="https://avatars1.githubusercontent.com/u/13440490?s=460&v=4" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Foto do Perfil</h5>
+                        <a href="#" class="btn btn-outline-dark" onclick="alert('Em desenvolvimento...')">Alterar Foto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

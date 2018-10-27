@@ -1,55 +1,63 @@
 <?php $this->navbar(); ?>
-<hr>
-<h1>Novo Aluno</h1>
+
 <br>
+<hr>
 
-<div class="row">
-    <div class="col-6">
-        <form method="post" action="/aluno/inserir">
-            <label for="name">Nome: </label>
-            <input type="text" id="name" name="name" required class="form-control">
-            <br>
+<div class="card border-dark">
 
-            <label for="email">Email: </label>
-            <input type="email" id="email" name="email" required class="form-control">
-            <br>
-
-            <label for="phone">Telefone: </label>
-            <input type="text" id="phone" name="phone" required class="form-control">
-            <br>
-
-            <label for="sex">Sexo: </label>
-            <select name="sex" id="sex" required class="form-control">
-                <option value="" selected> -- Selecione -- </option>
-                <option>Feminino</option>
-                <option>Masculino</option>
-            </select>
-            <br>
-
-            <label for="birth">Data de Nascimento: </label>
-            <input type="date" id="birth" name="birth" required class="form-control">
-            <br>
-
-            <button class="btn btn-block btn-primary">Enviar</button>
-        </form>
+    <div class="card-header">
+        <h2>Novo Aluno</h2>
     </div>
 
-    <div class="col-6">
-        <div class="jumbotron">
-            <h3>Como adicionar um novo aluno?</h3>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-6">
+                <form method="post" action="/aluno/inserir">
+                    <label for="name">Nome: </label>
+                    <input type="text" id="name" name="name" required class="form-control">
+                    <br>
 
-            <p>
-                akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
-                akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
-                akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
-                akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
-            </p>
-            <p>
-                akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
-                akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
-                akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
-            </p>
+                    <label for="email">Email: </label>
+                    <input type="email" id="email" name="email" required class="form-control">
+                    <br>
+
+                    <label for="phone">Telefone: </label>
+                    <input type="text" id="phone" name="phone" required class="form-control">
+                    <br>
+
+                    <label for="sex">Sexo: </label>
+                    <select name="sex" id="sex" required class="form-control">
+                        <option value="" selected> -- Selecione -- </option>
+                        <option>Feminino</option>
+                        <option>Masculino</option>
+                    </select>
+                    <br>
+
+                    <label for="birth">Data de Nascimento: </label>
+                    <input type="date" id="birth" name="birth" required class="form-control">
+                    <br>
+
+                    <button class="btn btn-block btn-primary">Enviar</button>
+                </form>
+            </div>
+
+            <div class="col-6">
+                <div class="jumbotron">
+                    <h3>Como adicionar um novo aluno?</h3>
+
+                    <p>
+                        akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                        akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                        akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                        akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                    </p>
+                    <p>
+                        akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                        akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                        akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<br><br><br>

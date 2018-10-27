@@ -8,47 +8,56 @@ $student = $data['student'];
 $id = $student->getUser()->getId();
 
 ?>
-<hr>
-<h1>Aluno: <?= $student->getUser()->getName() ?></h1>
 
 <br>
-<div class="row">
-    <div class="col-8">
-        <table class="table table-striped table-hover table-bordered">
-            <tr>
-                <th>Nome: </th>
-                <td><?=$student->getUser()->getName() ?></td>
-            </tr>
-            <tr>
-                <th>Email: </th>
-                <td><?=$student->getUser()->getEmail() ?></td>
-            </tr>
-            <tr>
-                <th>Telefone: </th>
-                <td><?=$student->getUser()->getPhone() ?></td>
-            </tr>
-            <tr>
-                <th>Sexo: </th>
-                <td><?=$student->getSex() ?></td>
-            </tr>
-            <tr>
-                <th>Data de Nascimento: </th>
-                <td><?=$student->getBirth()->format('d/m/Y') ?></td>
-            </tr>
-            <tr>
-                <th>Registrado em: </th>
-                <td><?=$student->getUser()->getRegisteredAt()->format('d/m/Y H:i:s') ?></td>
-            </tr>
-            <tr>
-                <th>Atualizado em: </th>
-                <td><?=$student->getUser()->getUpdatedAt()->format('d/m/Y H:i:s') ?></td>
-            </tr>
-        </table>
+<hr>
 
-        <br>
+<div class="card border-dark">
 
-        <a href="/aluno/editar?id=<?=$id?>" class="btn btn-warning">Editar</a>
-         <a href="/aluno/remover?id=<?=$id?>" class="btn btn-danger">Remover</a>
+    <div class="card-header">
+        <h2>Aluno: <?= $student->getUser()->getName() ?></h2>
+    </div>
 
+    <div class="card-body">
+        <div class="row">
+            <div class="col-8">
+                <table class="table table-striped table-hover table-bordered">
+                    <tr>
+                        <th>Nome: </th>
+                        <td><?=$student->getUser()->getName() ?></td>
+                    </tr>
+                    <tr>
+                        <th>Email: </th>
+                        <td><?=$student->getUser()->getEmail() ?></td>
+                    </tr>
+                    <tr>
+                        <th>Telefone: </th>
+                        <td><?=$student->getUser()->getPhone() ?></td>
+                    </tr>
+                    <tr>
+                        <th>Sexo: </th>
+                        <td><?=$student->getSex() ?></td>
+                    </tr>
+                    <tr>
+                        <th>Data de Nascimento: </th>
+                        <td><?=$student->getBirth()->format('d/m/Y') ?></td>
+                    </tr>
+                    <tr>
+                        <th>Registrado em: </th>
+                        <td><?=$student->getUser()->getRegisteredAt()->format('d/m/Y H:i:s') ?></td>
+                    </tr>
+                    <tr>
+                        <th>Atualizado em: </th>
+                        <td><?=$student->getUser()->getUpdatedAt()->format('d/m/Y H:i:s') ?></td>
+                    </tr>
+                </table>
+
+                <br>
+
+                <a href="/aluno/editar?id=<?=$id?>" class="btn btn-warning">Editar</a>
+                 <a href="/aluno/remover?id=<?=$id?>" class="btn btn-danger">Remover</a>
+
+            </div>
+        </div>
     </div>
 </div>

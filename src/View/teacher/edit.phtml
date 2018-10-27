@@ -9,49 +9,58 @@ $teacher = $data['teacher'];
 $id = $teacher->getUser()->getId();
 
 ?>
-<hr>
-<h1>Editar Professor: <?=$teacher->getUser()->getName()?></h1>
+
+
 <br>
+<hr>
 
-<div class="row">
-    <div class="col-6">
-        <form method="post" action="/professor/atualizar?id=<?=$id?>">
-            <label for="name">Nome: </label>
-            <input value="<?=$teacher->getUser()->getName()?>" type="text" id="name" name="name" required class="form-control">
-            <br>
+<div class="card border-dark">
 
-            <label for="email">Email: </label>
-            <input value="<?=$teacher->getUser()->getEmail()?>" type="email" id="email" name="email" required class="form-control">
-            <br>
-
-            <label for="phone">Telefone: </label>
-            <input value="<?=$teacher->getUser()->getPhone()?>" type="text" id="phone" name="phone" required class="form-control">
-            <br>
-
-            <label for="formation">Formação: </label>
-            <input value="<?=$teacher->getFormation()?>" type="text" id="formation" name="formation" required class="form-control">
-            <br>
-
-            <button class="btn btn-block btn-primary">Atualizar</button>
-        </form>
+    <div class="card-header">
+        <h2>Editar Professor: <?= $teacher->getUser()->getName() ?></h2>
     </div>
 
-    <div class="col-6">
-        <div class="jumbotron">
-            <h3>Como adicionar um novo professor?</h3>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-6">
+                <form method="post" action="/professor/atualizar?id=<?=$id?>">
+                    <label for="name">Nome: </label>
+                    <input value="<?=$teacher->getUser()->getName()?>" type="text" id="name" name="name" required class="form-control">
+                    <br>
 
-            <p>
-                akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
-                akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
-                akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
-                akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
-            </p>
-            <p>
-                akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
-                akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
-                akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
-            </p>
+                    <label for="email">Email: </label>
+                    <input value="<?=$teacher->getUser()->getEmail()?>" type="email" id="email" name="email" required class="form-control">
+                    <br>
+
+                    <label for="phone">Telefone: </label>
+                    <input value="<?=$teacher->getUser()->getPhone()?>" type="text" id="phone" name="phone" required class="form-control">
+                    <br>
+
+                    <label for="formation">Formação: </label>
+                    <input value="<?=$teacher->getFormation()?>" type="text" id="formation" name="formation" required class="form-control">
+                    <br>
+
+                    <button class="btn btn-block btn-primary">Atualizar</button>
+                </form>
+            </div>
+
+            <div class="col-6">
+                <div class="jumbotron">
+                    <h3>Como adicionar um novo professor?</h3>
+
+                    <p>
+                        akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                        akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                        akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                        akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                    </p>
+                    <p>
+                        akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                        akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                        akh daohdoiah doahda odaydsuiagiudg aiudgaisdg aisdg
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<br><br><br>
