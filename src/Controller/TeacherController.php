@@ -1,7 +1,9 @@
 <?php
 /**
- * Date: 02/10/18
- * Time: 21:24
+ * Created by PhpStorm.
+ * User: Alessandro Feitoza <eu@alessandrofeitoza.eu>
+ * Date: 23/10/18
+ * Time: 19:15
  */
 
 namespace App\Controller;
@@ -25,7 +27,7 @@ final class TeacherController extends Controller implements ControllerInterface
         $teachers = $this->repository->findAll();
 
         $this->render('teacher/index', [
-            'teachers' => $teachers
+            'teachers' => $teachers,
         ]);
     }
 
@@ -33,36 +35,68 @@ final class TeacherController extends Controller implements ControllerInterface
     {
         $this->render('teacher/new');
     }
-    
-    public function details()
-    {
-        $this->render('teacher/details');
-    }
 
     public function insert()
     {
-        $post = [
-            'name' => 'Chiquim', //$_POST['name']
-            'email' => 'ale123@email.com',
-            'phone' => '(85) 9 8674-0502',
-            'formation' => 'ADS',
-        ];
-
         $user = new User();
-        $user->setName($post['name']);
-        $user->setEmail($post['email']);
-        $user->setPhone($post['phone']);
+        $user->setName($_POST['name']);
+        $user->setEmail($_POST['email']);
+        $user->setPhone($_POST['phone']);
 
         $teacher = new Teacher();
         $teacher->setUser($user);
-        $teacher->setFormation($post['formation']);
+        $teacher->setFormation($_POST['formation']);
 
-        try {
-            $this->repository->save($teacher);
-        } catch (\Exception $exception) {
-            die ($exception->getMessage());
-        }
+        $this->repository->save($teacher);
 
-        echo 'Professor inserido';
+        header('location: /professor');
+    }
+
+    public function details()
+    {
+        $id = $_GET['id'];
+
+        $teacher = $this->repository->findOneById($id);
+
+        $this->render('teacher/details', [
+            'teacher' => $teacher,
+        ]);
+    }
+
+    public function remove()
+    {
+        $id = $_GET['id'];
+
+        $teacher = $this->repository->findOneById($id);
+
+        $this->repository->remove($teacher);
+
+        header('location: /professor');
+    }
+
+    public function edit()
+    {
+        $id = $_GET['id'];
+
+        $teacher = $this->repository->findOneById($id);
+
+        $this->render('teacher/edit', [
+            'teacher' => $teacher,
+        ]);
+    }
+
+    public function update()
+    {
+        $id = $_GET['id'];
+
+        $teacher = $this->repository->findOneById($id);
+        $teacher->setFormation($_POST['formation']);
+        $teacher->getUser()->setName($_POST['name']);
+        $teacher->getUser()->setEmail($_POST['email']);
+        $teacher->getUser()->setPhone($_POST['phone']);
+
+        $this->repository->save($teacher);
+
+        header('location: /professor');
     }
 }

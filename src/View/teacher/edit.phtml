@@ -1,29 +1,38 @@
-<?php $this->navbar(); ?>
+<?php
+
+$this->navbar();
+
+/** @var \App\Entity\Teacher $teacher
+ */
+$teacher = $data['teacher'];
+
+$id = $teacher->getUser()->getId();
+
+?>
 <hr>
-<h1>Novo Professor</h1>
+<h1>Editar Professor: <?=$teacher->getUser()->getName()?></h1>
 <br>
 
 <div class="row">
     <div class="col-6">
-        <form method="post" action="/professor/inserir">
+        <form method="post" action="/professor/atualizar?id=<?=$id?>">
             <label for="name">Nome: </label>
-            <input type="text" id="name" name="name" required class="form-control">
+            <input value="<?=$teacher->getUser()->getName()?>" type="text" id="name" name="name" required class="form-control">
             <br>
 
             <label for="email">Email: </label>
-            <input type="email" id="email" name="email" required class="form-control">
+            <input value="<?=$teacher->getUser()->getEmail()?>" type="email" id="email" name="email" required class="form-control">
             <br>
 
             <label for="phone">Telefone: </label>
-            <input type="text" id="phone" name="phone" required class="form-control">
-            <br>
+            <input value="<?=$teacher->getUser()->getPhone()?>" type="text" id="phone" name="phone" required class="form-control">
             <br>
 
             <label for="formation">Formação: </label>
-            <input type="text" id="formation" name="formation" required class="form-control">
+            <input value="<?=$teacher->getFormation()?>" type="text" id="formation" name="formation" required class="form-control">
             <br>
 
-            <button class="btn btn-block btn-primary">Enviar</button>
+            <button class="btn btn-block btn-primary">Atualizar</button>
         </form>
     </div>
 
